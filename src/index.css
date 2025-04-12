@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 33% 99%;
+    --foreground: 24 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+
+    --primary: 24 59% 55%;
+    --primary-foreground: 24 10% 98%;
+
+    --secondary: 30 50% 96%;
+    --secondary-foreground: 24 30% 30%;
+
+    --muted: 30 10% 96%;
+    --muted-foreground: 24 5% 45%;
+
+    --accent: 30 50% 96%;
+    --accent-foreground: 24 30% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 24 5% 90%;
+    --input: 24 5% 90%;
+    --ring: 24 59% 55%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+  }
+
+  .container {
+    @apply px-4 md:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass {
+    @apply backdrop-blur-lg bg-white/80 border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-lg bg-foreground/5 border border-foreground/10;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-20 lg:py-24;
+  }
+  
+  .transition-all-300 {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
